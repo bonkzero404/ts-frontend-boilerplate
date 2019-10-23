@@ -2,7 +2,7 @@
 Just a simple boilerplate web app
 
 <p>
-  React Boilerplate for web application uses <a href="https://www.typescriptlang.org/">Typescript</a>, <a href="https://facebook.github.io/react/">React</a>, <a href="https://github.com/reactjs/redux">Redux</a>, <a href="https://github.com/reactjs/react-router">React Router</a>, <a href="http://webpack.github.io/docs/">Webpack</a>, <a href="https://developers.google.com/web/progressive-web-apps">PWAs</a>, <a href="http://webpack.github.io/docs/">Webpack</a> and <a href="https://github.com/gaearon/react-hot-loader">React Hot Loader</a> for rapid application development (HMR).
+  React Boilerplate for web application uses <a href="https://www.typescriptlang.org/">Typescript</a>, <a href="https://facebook.github.io/react/">React</a>, <a href="https://github.com/reactjs/redux">Redux</a>, <a href="https://github.com/reactjs/react-router">React Router</a>, <a href="https://eslint.org/">Eslint</a>, <a href="http://webpack.github.io/docs/">Webpack</a>, <a href="https://developers.google.com/web/progressive-web-apps">PWAs</a>, <a href="http://webpack.github.io/docs/">Webpack</a> and <a href="https://github.com/gaearon/react-hot-loader">React Hot Loader</a> for rapid application development (HMR).
 </p>
 
 <br>
@@ -12,6 +12,7 @@ Just a simple boilerplate web app
   <a href="https://webpack.github.io/"><img src="./internals/img/webpack-padded-90.png" /></a>
   <a href="http://redux.js.org/"><img src="./internals/img/redux-padded-90.png" /></a>
   <a href="https://github.com/ReactTraining/react-router"><img src="./internals/img/react-router-padded-90.png" /></a>
+  <a href="https://eslint.org/"><img src="./internals/img/eslint-padded-90.png" /></a>
   <a href="https://www.typescriptlang.org/"><img src="./internals/img/ts-padded.png" width="90" /></a>
   <a href="https://developers.google.com/web/progressive-web-apps"><img src="./internals/img/pwa-padded.png" width="90" /></a>
 </div>
