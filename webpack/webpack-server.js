@@ -1,14 +1,16 @@
 const path = require('path');
+require('dotenv').config();
+
 let isDev = process.env.NODE_ENV === 'development';
 
 exports.configDevServer = {
   devServer: {
-    publicPath: "http://localhost:4000/",
+    publicPath: process.env.DEV_SERVER,
     hot: true,
     inline: true,
     historyApiFallback: true,
     contentBase: path.resolve(__dirname, "../", "public"),
-    port: 4000
+    port: process.env.DEV_PORT
   },
   watch: (isDev ? true : false)
 }

@@ -67,6 +67,7 @@
   },
   "dependencies": {
     "connected-react-router": "^6.5.2",
+    "dotenv": "^8.2.0",
     "history": "^4.10.1",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
