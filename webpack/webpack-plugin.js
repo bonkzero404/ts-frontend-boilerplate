@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OfflinePlugin = require('offline-plugin');
 
 let isDev = process.env.NODE_ENV === 'development';
 
@@ -14,6 +15,7 @@ plugin.extract = [
   new HtmlWebpackPlugin({
     template: 'public/index.html'
   }),
+  new OfflinePlugin()
 ]
 
 const copyPlugin = new CopyPlugin([
