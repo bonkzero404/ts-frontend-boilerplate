@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OfflinePlugin = require('offline-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 let isDev = process.env.NODE_ENV === 'development';
 
@@ -25,6 +26,11 @@ plugin.extract = [
     ],
     appShell: '/',
     publicPath: '/'
+  }),
+  new ManifestPlugin({
+    name: 'ts-frontend-boilerplate',
+    fileName: 'asset-manifest.json',
+    isAsset: true
   })
 ]
 

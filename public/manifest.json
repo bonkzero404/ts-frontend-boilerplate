@@ -1,6 +1,6 @@
 {
-  "short_name": "Kemnaker App",
-  "name": "Kemnaker SKKNI Application Document",
+  "short_name": "ts-frontend-boilerplate",
+  "name": "React Typescript Boilerplate",
   "icons": [
     {
       "src": "favicon.ico",
