@@ -15,6 +15,10 @@
     "Frontend",
     "Boilerplate"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bonkzero404/ts-frontend-boilerplate.git"
+  },
   "author": "Janitra Panji <bonkzero404@gmail.com>",
   "license": "MIT",
   "devDependencies": {
