@@ -15,7 +15,17 @@ plugin.extract = [
   new HtmlWebpackPlugin({
     template: 'public/index.html'
   }),
-  new OfflinePlugin()
+  new OfflinePlugin({
+    externals: [
+      '/',
+      '/favicon.ico',
+      '/manifest.json',
+      '/logo192.png',
+      '/logo512.png',
+    ],
+    appShell: '/',
+    publicPath: '/'
+  })
 ]
 
 const copyPlugin = new CopyPlugin([
