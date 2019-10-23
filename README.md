@@ -16,9 +16,9 @@ A Simple Boilerplate for React Redux and Typescript
 </div>
 
 First Page
-![Screenshot](docs/1.png)
+![Screenshot](internals/mock/1.png)
 Second Page
-![Screenshot](docs/2.png)
+![Screenshot](internals/mock/2.png)
 
 <h2>Install</h2>
 
