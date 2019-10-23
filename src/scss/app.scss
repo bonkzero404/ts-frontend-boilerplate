@@ -1,0 +1,18 @@
+@import './variable.scss';
+@import './function.scss';
+
+@include font('RobotoRegular', '../../public/fonts/Roboto-Regular');
+@include font('RobotoThin', '../../public/fonts/Roboto-Thin');
+
+* {
+  padding: 0px;
+  margin: 0px;
+  outline: none !important;
+  box-shadow: none;
+}
+
+body {
+  font-family: RobotoThin;
+  color: $color-white;
+  background-color: $color-midnight;
+}

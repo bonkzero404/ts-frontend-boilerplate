@@ -1,0 +1,49 @@
+@import '../../scss/variable.scss';
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: $color-carrot;
+    &:hover {
+      color: $color-sun;
+      text-decoration: none;
+    }
+  }
+
+  .countText {
+    font-family: RobotoRegular;
+    color: $color-sassy;
+    font-size: 10em;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: .7em;
+  }
+
+  .btnCount {
+    font-size: 2em;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    cursor: pointer;
+    border: 0px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    color: $color-sassy;
+    &:hover {
+      color: $color-sun;
+    }
+  }
+}

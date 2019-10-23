@@ -1,0 +1,29 @@
+root = true
+
+; applies to all files
+[*]
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+; applies only to TS files
+[**.ts]
+indent_style = space
+indent_size = 2
+
+[**.tsx]
+indent_style = space
+indent_size = 2
+
+; applies only to Makefiles
+[Makefile]
+indent_style = tab
+
+; applies only to JSON files
+[*.json]
+indent_size = 2
+
+; applies only to Markdown files
+[*.md]
+trim_trailing_whitespace = false

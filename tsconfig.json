@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+		"baseUrl": ".",
+		"target": "esnext",
+		"moduleResolution": "node",
+		"allowJs": true,
+		"isolatedModules": true,
+    "esModuleInterop": true,
+    "outDir": "dist",
+		"jsx": "react",
+	},
+	"exclude": [ "node_modules" ]
+}
