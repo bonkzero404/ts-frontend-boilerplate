@@ -9,7 +9,7 @@ exports.configDevServer = {
     hot: true,
     inline: true,
     historyApiFallback: true,
-    contentBase: path.resolve(__dirname, "../", "public"),
+    contentBase: path.resolve(__dirname, "../", process.env.PUBLIC_DEV),
     port: process.env.DEV_PORT
   },
   watch: (isDev ? true : false)

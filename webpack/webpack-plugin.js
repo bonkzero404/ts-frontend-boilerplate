@@ -4,6 +4,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OfflinePlugin = require('offline-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
+require('dotenv').config();
 
 let isDev = process.env.NODE_ENV === 'development';
 
@@ -14,7 +15,7 @@ plugin.extract = [
   new webpack.ProgressPlugin(),
   new webpack.SourceMapDevToolPlugin(),
   new HtmlWebpackPlugin({
-    template: 'public/index.html'
+    template: `${process.env.PUBLIC_DEV}/index.html`
   }),
   new OfflinePlugin({
     externals: [
@@ -38,7 +39,7 @@ const copyPlugin = new CopyPlugin([
   {
     from: 'public',
     to: '' ,
-    ignore: ['fonts/**/*'],
+    ignore: (process.env.ASSETS_COPY_IGNORE.trim() === '' ? [] : process.env.ASSETS_COPY_IGNORE.split(',')),
   },
 ]);
 

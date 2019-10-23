@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+require('dotenv').config();
 let isDev = process.env.NODE_ENV === 'development';
 
 /**
@@ -8,7 +9,7 @@ let isDev = process.env.NODE_ENV === 'development';
 exports.babelTs = {
   test: /\.ts(x?)$/,
   exclude: /node_modules/,
-  include: /src/,
+  include: new RegExp(`${process.env.SOURCE_DEV}`),
   use: [
     {
       loader: 'babel-loader'
@@ -80,7 +81,7 @@ if (!isDev) {
  */
 const assets = {
   test: /\.(ttf|eot|woff|woff2|jpg|png|gif|bmp|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-  include: /public|src/,
+  include: new RegExp(`${process.env.PUBLIC_DEV}|${process.env.SOURCE_DEV}`), // /public|src/,
   loader: 'url-loader'
 }
 
