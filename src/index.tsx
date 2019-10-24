@@ -10,14 +10,18 @@ OfflinePluginRuntime.install();
 
 const store = configureStore();
 
-const render = () => {
-  ReactDOM.render(
+export const MainApp = () => {
+  return (
     <AppContainer>
       <Provider store={store}>
         <App history={history} />
       </Provider>
-    </AppContainer>,
-  document.getElementById('app'));
+    </AppContainer>
+  );
+};
+
+const render = () => {
+  ReactDOM.render(<MainApp />, document.getElementById('app'));
 }
 
 if (module.hot) {

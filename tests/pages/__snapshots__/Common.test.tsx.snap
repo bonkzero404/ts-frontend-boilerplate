@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Common /> defines the snapshoot component 1`] = `
+<div>
+  <div>
+    <img
+      src="test-file-stub"
+    />
+    <h1>
+      React JS
+    </h1>
+    <p>
+      Horay 
+      <a
+        href="/counter"
+        onClick={[Function]}
+      >
+        Click Me
+      </a>
+       to play counter
+    </p>
+    <p>
+      You are here : 
+      /
+    </p>
+  </div>
+</div>
+`;

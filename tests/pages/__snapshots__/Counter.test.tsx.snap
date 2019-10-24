@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Counter /> defines the snapshoot component 1`] = `
+<div>
+  <div>
+    <h1>
+      0
+    </h1>
+    <button
+      onClick={[Function]}
+    >
+      +
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      -
+    </button>
+    <p>
+      Go to 
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+       for now
+    </p>
+    <p>
+      You are here : 
+      /
+    </p>
+  </div>
+</div>
+`;

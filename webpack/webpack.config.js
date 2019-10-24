@@ -11,7 +11,7 @@ let isDev = process.env.NODE_ENV === 'development';
 const common = {
   mode: (isDev ? 'development' : 'production'),
   devtool: (isDev ? 'eval-source-map' : 'source-map'),
-  entry: ['react-hot-loader/patch', wpath.src],
+  entry: ['@babel/polyfill', 'react-hot-loader/patch', wpath.src],
   performance: {
     hints: isDev ? false : 'warning',
     maxEntrypointSize: 512000,
