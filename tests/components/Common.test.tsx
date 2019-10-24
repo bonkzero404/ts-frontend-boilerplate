@@ -8,7 +8,6 @@ describe('<Common />', () => {
 
   it('defines the component', () => {
     wrapper = mountComponent(Common, props);
-    // console.log('wrapper is', wrapper.debug());
     expect(wrapper).toBeDefined();
   });
 });
@@ -18,7 +17,6 @@ describe('<Common />', () => {
 
   it('defines the snapshoot component', () => {
     const tree = rendererComponent(Common, props).toJSON();
-    // console.log('wrapper is', wrapper.debug());
     expect(tree).toMatchSnapshot();
   });
 });

@@ -8,7 +8,6 @@ describe('<Counter />', () => {
 
   it('defines the component', () => {
     wrapper = mountComponent(Counter, props);
-    // console.log('wrapper is', wrapper.debug());
     expect(wrapper).toBeDefined();
   });
 });
@@ -20,7 +19,6 @@ describe('<Counter />', () => {
 
   it('defines the snapshoot component', () => {
     const tree = rendererComponent(Counter, props).toJSON();
-    // console.log('wrapper is', wrapper.debug());
     expect(tree).toMatchSnapshot();
   });
 });
