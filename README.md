@@ -15,6 +15,7 @@ Just a simple boilerplate web app
   <a href="https://eslint.org/"><img src="./internals/img/eslint-padded-90.png" /></a>
   <a href="https://www.typescriptlang.org/"><img src="./internals/img/ts-padded.png" width="90" /></a>
   <a href="https://developers.google.com/web/progressive-web-apps"><img src="./internals/img/pwa-padded.png" width="90" /></a>
+  <a href="https://jestjs.io"><img src="./internals/img/jest-padded.png" width="90" /></a>
 </div>
 
 First Page
@@ -26,6 +27,11 @@ Second Page
 
 ```bash
 yarn
+```
+
+Unit Test (Jest & Enzyme) : Component Test defined & Snapshoot components
+```bash
+yarn test
 ```
 
 Run Development :
