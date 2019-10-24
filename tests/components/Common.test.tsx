@@ -10,10 +10,6 @@ describe('<Common />', () => {
     wrapper = mountComponent(Common, props);
     expect(wrapper).toBeDefined();
   });
-});
-
-describe('<Common />', () => {
-  const props: any = {};
 
   it('defines the snapshoot component', () => {
     const tree = rendererComponent(Common, props).toJSON();

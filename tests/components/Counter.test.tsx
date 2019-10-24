@@ -10,15 +10,10 @@ describe('<Counter />', () => {
     wrapper = mountComponent(Counter, props);
     expect(wrapper).toBeDefined();
   });
-});
-
-describe('<Counter />', () => {
-  let wrapper: any;
-
-  const props: any = {};
 
   it('defines the snapshoot component', () => {
     const tree = rendererComponent(Counter, props).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
+
