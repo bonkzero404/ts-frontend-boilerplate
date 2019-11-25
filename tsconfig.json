@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
 		"baseUrl": ".",
+		"module": "esnext",
 		"target": "esnext",
 		"moduleResolution": "node",
 		"allowJs": true,
 		"isolatedModules": true,
     "esModuleInterop": true,
-    "outDir": "dist",
-		"jsx": "react",
+		"outDir": "dist",
+		"noImplicitAny": false,
+		"jsx": "react"
 	},
 	"exclude": [ "node_modules" ]
 }
