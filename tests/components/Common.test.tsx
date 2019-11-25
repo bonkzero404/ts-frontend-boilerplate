@@ -1,5 +1,5 @@
 import { mountComponent, rendererComponent } from '../utils/test-utils';
-import Common from '../../src/components/Common';
+import Common from '../../src/components/Common/Common';
 
 describe('<Common />', () => {
   let wrapper: any;

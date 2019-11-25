@@ -1,5 +1,5 @@
 import { mountComponent, rendererComponent } from '../utils/test-utils';
-import Counter from '../../src/components/Counter';
+import Counter from '../../src/components/Counter/Counter';
 
 describe('<Counter />', () => {
   let wrapper: any;
