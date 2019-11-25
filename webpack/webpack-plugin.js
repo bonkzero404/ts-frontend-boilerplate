@@ -5,10 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OfflinePlugin = require('offline-plugin');
-// const ManifestPlugin = require('webpack-manifest-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
-// const PreloadWebpackPlugin = require('preload-webpack-plugin');
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -17,11 +14,6 @@ const plugin = [
   new HtmlWebpackPlugin({
     template: `${process.env.PUBLIC_DEV}/index.html`
   }),
-  // new ManifestPlugin({
-  //   name: 'ts-frontend-boilerplate',
-  //   fileName: 'asset-manifest.json',
-  //   isAsset: true
-  // }),
   new webpack.DefinePlugin({
     API_SERVER: JSON.stringify(process.env.API_SERVER),
     POUCHDB_ENDPOINT: JSON.stringify(process.env.POUCHDB_ENDPOINT),
@@ -35,7 +27,6 @@ const plugin = [
     minRatio: 0.8,
     compressionOptions: { level: 9 },
   }),
-  // new BundleAnalyzerPlugin()
 ]
 
 const copyPlugin = new CopyPlugin([
