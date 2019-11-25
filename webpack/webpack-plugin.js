@@ -1,40 +1,41 @@
+require('dotenv').config();
+
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OfflinePlugin = require('offline-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
+// const ManifestPlugin = require('webpack-manifest-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+// const PreloadWebpackPlugin = require('preload-webpack-plugin');
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-require('dotenv').config();
+const isDev = process.env.NODE_ENV === 'development';
 
-let isDev = process.env.NODE_ENV === 'development';
-
-const plugin = {};
-
-plugin.extract = [
+const plugin = [
   new webpack.HotModuleReplacementPlugin(),
-  new webpack.ProgressPlugin(),
-  new webpack.SourceMapDevToolPlugin(),
   new HtmlWebpackPlugin({
     template: `${process.env.PUBLIC_DEV}/index.html`
   }),
-
-  new OfflinePlugin({
-    externals: [
-      '/',
-      '/favicon.ico',
-      '/manifest.json',
-      '/logo192.png',
-      '/logo512.png',
-    ],
-    appShell: '/',
-    publicPath: '/'
+  // new ManifestPlugin({
+  //   name: 'ts-frontend-boilerplate',
+  //   fileName: 'asset-manifest.json',
+  //   isAsset: true
+  // }),
+  new webpack.DefinePlugin({
+    API_SERVER: JSON.stringify(process.env.API_SERVER),
+    POUCHDB_ENDPOINT: JSON.stringify(process.env.POUCHDB_ENDPOINT),
+    POUCHDB_DB: JSON.stringify(process.env.POUCHDB_DB),
   }),
-  new ManifestPlugin({
-    name: 'ts-frontend-boilerplate',
-    fileName: 'asset-manifest.json',
-    isAsset: true
-  })
+  new CompressionPlugin({
+    filename: '[path].gz[query]',
+    test: /\.(js|css|html|svg|png|jpg|webp|ttf)$/,
+    algorithm: "gzip",
+    threshold: 8192,
+    minRatio: 0.8,
+    compressionOptions: { level: 9 },
+  }),
+  // new BundleAnalyzerPlugin()
 ]
 
 const copyPlugin = new CopyPlugin([
@@ -51,9 +52,23 @@ const cssExtract = new MiniCssExtractPlugin({
   ignoreOrder: false, // Enable to remove warnings about conflicting order
 });
 
+const sw = new OfflinePlugin({
+  externals: [
+    '/favicon.ico',
+    '/manifest.json',
+  ],
+  appShell: '/',
+  publicPath: '/'
+});
+
 if (!isDev) {
-  plugin.extract.push(copyPlugin);
-  plugin.extract.push(cssExtract);
+  plugin.push(sw);
+  plugin.push(new webpack.ProgressPlugin());
+  // plugin.push(new PreloadWebpackPlugin());
+  plugin.push(copyPlugin);
+  plugin.push(cssExtract);
+} else {
+  plugin.push(new webpack.SourceMapDevToolPlugin());
 }
 
 module.exports = plugin;

@@ -1,7 +1,7 @@
-const path = require('path');
 require('dotenv').config();
 
-let isDev = process.env.NODE_ENV === 'development';
+const path = require('path');
+const isDev = process.env.NODE_ENV === 'development';
 
 exports.configDevServer = {
   devServer: {
@@ -12,5 +12,5 @@ exports.configDevServer = {
     contentBase: path.resolve(__dirname, "../", process.env.PUBLIC_DEV),
     port: process.env.DEV_PORT
   },
-  watch: (isDev ? true : false)
+  watch: isDev
 }
