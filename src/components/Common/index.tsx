@@ -10,7 +10,7 @@ const Common: React.FunctionComponent<TProps> = (props) => {
   return (
     <div className={Style.container}>
       <div className={Style.box}>
-        <img className={Style.logo} src={require('../../../public/logo192.png')} />
+        <img className={Style.logo} src={require('../../assets/images/logo.png')} />
         <h1 className={Style.headText}>React JS</h1>
         <p>Horay <Link to="/counter">Click Me</Link> to play counter</p>
         <p>You are here : {props.pathname}</p>

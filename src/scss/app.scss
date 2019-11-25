@@ -1,8 +1,8 @@
 @import './variable.scss';
 @import './function.scss';
 
-@include font('RobotoRegular', '../../public/fonts/Roboto-Regular');
-@include font('RobotoThin', '../../public/fonts/Roboto-Thin');
+@include font('RobotoRegular', '../assets/fonts/Roboto-Regular');
+@include font('RobotoThin', '../assets/fonts/Roboto-Thin');
 
 * {
   padding: 0px;
