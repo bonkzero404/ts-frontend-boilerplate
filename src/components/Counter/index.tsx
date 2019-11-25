@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { State } from '../../store/reducers';
 import { counterIncrement, counterDecrement } from '../../store/counter/actions';
-import * as Style from './Counter.scss';
+import * as Style from './Style.scss';
 
 type TProps =
   ReturnType<typeof mapStateToProps> &

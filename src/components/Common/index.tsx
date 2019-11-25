@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { State } from '../../store/reducers';
-import * as Style from './Common.scss';
+import * as Style from './Style.scss';
 
 type TProps = ReturnType<typeof mapStateToProps>;
 
