@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { History } from 'history'
+import { History } from 'history';
 import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'connected-react-router';
 import Common from './components/Common';
@@ -10,7 +10,7 @@ interface AppProps {
   history: History;
 }
 
-const App = ({ history }: AppProps) =>  (
+const App = ({ history }: AppProps) => (
   <ConnectedRouter history={history}>
     <Switch>
       <Route exact path="/" component={Common} />

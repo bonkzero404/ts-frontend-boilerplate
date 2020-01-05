@@ -1,10 +1,10 @@
 {
   "env": {
     "browser": true,
-    "es6": true,
+    "es6": true
   },
   "extends": [
-    "airbnb",
+    "airbnb"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -20,7 +20,9 @@
   },
   "plugins": [
     "react",
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "react-hooks",
+    "prettier"
   ],
   "rules": {
     /**
@@ -59,6 +61,7 @@
     /**
      * @description rules of eslint-plugin-react-hooks
      */
+    "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
 
     /**
