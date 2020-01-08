@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OfflinePlugin = require('offline-plugin');
@@ -55,7 +56,7 @@ const sw = new OfflinePlugin({
 if (!isDev) {
   plugin.push(sw);
   plugin.push(new webpack.ProgressPlugin());
-  // plugin.push(new PreloadWebpackPlugin());
+  plugin.push(new PreloadWebpackPlugin());
   plugin.push(copyPlugin);
   plugin.push(cssExtract);
 } else {
