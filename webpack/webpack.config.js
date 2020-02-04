@@ -5,6 +5,8 @@ const webpackPath = require('./webpack-path');
 const webpackServer = require('./webpack-server');
 
 const isDev = process.env.NODE_ENV === 'development';
+const isElectron = process.env.ELECTRON;
+const target = isElectron == 'true' ? 'electron-renderer' : 'web';
 const mode = (isDev ? 'development' : 'production');
 const devtool = (isDev ? 'eval' : false);
 const entry = ['@babel/polyfill', 'react-hot-loader/patch', webpackPath.src];
@@ -58,13 +60,15 @@ const resolve = {
 const output = {
   path: webpackPath.out,
   filename: 'scripts/[name].bundle.js',
-  publicPath: '/',
+  // publicPath: '/',
+  publicPath: isElectron == 'true' && isDev ? 'http://localhost:11211/' : '/'
 };
 
 const plugins = webpackPlugin;
 
 const common = {
   mode,
+  target,
   devtool,
   entry,
   performance,
