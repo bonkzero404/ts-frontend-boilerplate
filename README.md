@@ -124,4 +124,4 @@ $ yarn start:elc:prod
 $ docker build -t ts-react-boilerplate .
 $ docker run -p 11000:5000 -d ts-react-boilerplate
 ```
-
+Browse to <a href="http://localhost:5000">http://localhost:11000</a>
