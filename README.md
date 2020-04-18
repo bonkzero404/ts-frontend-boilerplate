@@ -137,7 +137,7 @@ $ yarn start:elc:prod
 <h2>Build and Running with Docker</h2>
 
 ```bash
-$ docker build -t ts-react-boilerplate .
-$ docker run -p 11000:5000 -d ts-react-boilerplate
+$ docker build -t ts-frontend-boilerplate .
+$ docker run -p 11000:5000 -d ts-frontend-boilerplate
 ```
 Browse to <a href="http://localhost:5000">http://localhost:11000</a>
