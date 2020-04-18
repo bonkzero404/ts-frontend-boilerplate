@@ -4,7 +4,15 @@ import thunk from 'redux-thunk';
 import { routerMiddleware } from 'connected-react-router';
 import createRootReducer from './reducers';
 
-export const history = ELECTRON ? createHashHistory() : createBrowserHistory();
+let hst: any;
+
+try {
+  hst = ELECTRON ? createHashHistory() : createBrowserHistory();
+} catch(err) {
+  hst = createBrowserHistory();
+}
+
+export const history = hst;
 
 export default function configureStore(preloadedState?: any) {
   const composeEnhancer: typeof compose = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
