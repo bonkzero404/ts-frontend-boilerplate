@@ -21,4 +21,4 @@ deploy:
   provider: pagesreleases
   cleanup: true
   github_token: $github_token
-  local_dir: dist/web
+  file: *
