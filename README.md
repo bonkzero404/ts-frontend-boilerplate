@@ -1,5 +1,6 @@
 # ts-frontend-boilerplate
-Just a simple boilerplate modern web app
+
+<p>This framework has support for building applications with electron, it's very simple and powerful for building modern web app or desktop app</p>
 
 <p>
   React Boilerplate for web application uses <a href="https://www.typescriptlang.org/">Typescript</a>, <a href="https://facebook.github.io/react/">React</a>, <a href="https://github.com/reactjs/redux">Redux</a>, <a href="https://github.com/reactjs/react-router">React Router</a>, <a href="https://eslint.org/">Eslint</a>, <a href="https://developers.google.com/web/progressive-web-apps">PWAs</a>, <a href="http://webpack.github.io/docs/">Webpack</a> and <a href="https://github.com/gaearon/react-hot-loader">React Hot Loader</a> for rapid application development (HMR).
@@ -17,8 +18,6 @@ Just a simple boilerplate modern web app
   <a href="https://developers.google.com/web/progressive-web-apps"><img src="./internals/img/pwa-padded.png" width="90" /></a>
   <a href="https://jestjs.io"><img src="./internals/img/jest-padded.png" width="90" /></a>
 </div>
-
-<p>This framework has support for building applications with electron, it's very simple and powerful for building a web or desktop application</p>
 
 <h1>Installation</h1>
 <h2>Clone the repository</h2>
