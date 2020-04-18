@@ -18,36 +18,104 @@ Just a simple boilerplate modern web app
   <a href="https://jestjs.io"><img src="./internals/img/jest-padded.png" width="90" /></a>
 </div>
 
-First Page
+<p>This framework has support for building applications with electron, it's very simple and powerful for building a web or desktop application</p>
+
+<h1>Installation</h1>
+<h2>Clone the repository</h2>
+
+```bash
+$ git clone https://github.com/bonkzero404/ts-frontend-boilerplate.git
+$ cd ts-frontend-boilerplate
+```
+
+<h2>Install Dependencies</h2>
+
+```bash
+## Using yarn
+$ yarn
+
+## Using npm
+$ npm install
+```
+<h1>Running the Browser Examples with Development Mode</h1>
+
+```bash
+$ yarn watch
+```
+<p>Now you can browse to <a href="http://localhost:11211/">http://localhost:11211/</a></p>
+
 ![Screenshot](internals/mock/1.png)
-Second Page
+If you want to play counter
 ![Screenshot](internals/mock/2.png)
 
-<h2>Install</h2>
+<h2>Unit Test</h2>
+<p>Component Test defined & Snapshoot components</p>
 
 ```bash
-yarn
+$ yarn test
 ```
 
-Unit Test (Jest & Enzyme) : Component Test defined & Snapshoot components
+<h1>Running With Electron for Development Mode</h1>
+<h2>Set Environment Variable</h2>
+<p>open the .env file and change the <strong>ELECTRON</strong> variable to true</p>
+
 ```bash
-yarn test
+## Require for configure build webpack
+SOURCE_DEV = src
+PUBLIC_DEV = public
+BUILD_DEST = dist
+
+## Require for configure webpack copy ignore in assets
+ASSETS_COPY_IGNORE = ""
+
+## Dev server configure
+DEV_HOST = http://localhost
+DEV_PORT = 11211
+
+## Sites configure
+TITLE = "Typescript React Framework"
+
+## Add exposed global var in here
+ELECTRON = true ## <-- Change this if you want to use electron
+
 ```
 
-Run Development :
+<h2>Running Example Electron App</h2>
 
 ```bash
-yarn start:dev
+## first
+$ yarn watch
+## or 
+$ npm run watch
+
+## last
+## then running the electron app with the following command:
+$ yarn start:elc:dev
+## or
+$ npm run start:elc:dev
 ```
 
-Build Production :
+<h1>Build Script to Production and Running the Example App</h1>
+<h2>Web App</h2>
 
 ```bash
-yarn build
+## build the script
+$ yarn build
+
+## running for test production
+$ yarn start:web:prod
 ```
 
-Open Browser for development : 
+Browse to <a href="http://localhost:5000">http://localhost:5000</a>
+
+
+<h2>Electron App</h2>
+
 ```bash
-http://localhost:11211
+## build the script
+$ yarn build
+
+## running for test production
+$ yarn start:elc:prod
 ```
 
