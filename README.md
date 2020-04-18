@@ -7,7 +7,7 @@ Just a simple boilerplate modern web app
 
 <br>
 
-<div align="center">
+<div align="center" style="margin-bottom: 20px">
   <a href="https://facebook.github.io/react/"><img src="./internals/img/react-padded-90.png" /></a>
   <a href="https://webpack.github.io/"><img src="./internals/img/webpack-padded-90.png" /></a>
   <a href="http://redux.js.org/"><img src="./internals/img/redux-padded-90.png" /></a>
