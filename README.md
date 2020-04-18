@@ -3,7 +3,7 @@
 <p>This framework has support for building applications with electron, it's very simple and powerful for building modern web app or desktop app</p>
 
 <p>
-  React Boilerplate for web application uses <a href="https://www.typescriptlang.org/">Typescript</a>, <a href="https://facebook.github.io/react/">React</a>, <a href="https://github.com/reactjs/redux">Redux</a>, <a href="https://github.com/reactjs/react-router">React Router</a>, <a href="https://eslint.org/">Eslint</a>, <a href="https://developers.google.com/web/progressive-web-apps">PWAs</a>, <a href="http://webpack.github.io/docs/">Webpack</a> and <a href="https://github.com/gaearon/react-hot-loader">React Hot Loader</a> for rapid application development (HMR).
+  React Boilerplate uses <a href="https://www.typescriptlang.org/">Typescript</a>, <a href="https://facebook.github.io/react/">React</a>, <a href="https://github.com/reactjs/redux">Redux</a>, <a href="https://github.com/reactjs/react-router">React Router</a>, <a href="https://eslint.org/">Eslint</a>, <a href="https://developers.google.com/web/progressive-web-apps">PWAs</a>, <a href="http://webpack.github.io/docs/">Webpack</a> and <a href="https://github.com/gaearon/react-hot-loader">React Hot Loader</a> for rapid application development (HMR).
 </p>
 
 <br>
@@ -116,5 +116,12 @@ $ yarn build
 
 ## running for test production
 $ yarn start:elc:prod
+```
+
+<h2>Build and Running with Docker</h2>
+
+```bash
+$ docker build -t ts-react-boilerplate .
+$ docker run -p 11000:5000 -d ts-react-boilerplate
 ```
 
