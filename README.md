@@ -13,6 +13,11 @@
   <a href="https://travis-ci.org/bonkzero404/ts-frontend-boilerplate">
     <img src="https://travis-ci.org/bonkzero404/ts-frontend-boilerplate.svg" alt="Build Status" />
   </a>
+  <!-- Coveral -->
+  <a href='https://coveralls.io/github/bonkzero404/ts-frontend-boilerplate?branch=master'>
+    <img src='https://coveralls.io/repos/github/bonkzero404/ts-frontend-boilerplate/badge.svg?branch=master' alt='Coverage Status' />
+  </a>
+
 </a>
 
 <p>This framework has support for building applications with electron, it's very simple and powerful for building modern web app or desktop app</p>
