@@ -11,7 +11,7 @@
   </a>
   <!-- Build Status -->
   <a href="https://travis-ci.org/bonkzero404/ts-frontend-boilerplate">
-    <img src="https://travis-ci.org/bonkzero404/ts-frontend-boilerplate.svg?branch=master" alt="Build Status" />
+    <img src="https://travis-ci.org/bonkzero404/ts-frontend-boilerplate.svg" alt="Build Status" />
   </a>
 </a>
 
