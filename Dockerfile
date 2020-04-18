@@ -11,4 +11,4 @@ RUN yarn
 # build package
 RUN yarn build
 
-CMD ["yarn", "start:production"]
+CMD ["yarn", "start:web:prod"]
