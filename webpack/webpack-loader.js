@@ -77,7 +77,7 @@ exports.fonts = {
   loader: isDev ? 'url-loader' : 'file-loader',
   options: {
     limit: 100000,
-    name: 'fonts/[name].[hash:8].[ext]'
+    name: '[name].[hash:8].[ext]'
   }
 }
 
@@ -87,6 +87,6 @@ exports.images = {
   loader: isDev ? 'url-loader' : 'file-loader',
   options: {
     limit: 100000,
-    name: 'images/[name].[hash:8].[ext]'
+    name: '[name].[hash:8].[ext]'
   }
 }

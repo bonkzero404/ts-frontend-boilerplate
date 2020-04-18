@@ -1,3 +1,6 @@
+require('dotenv').config();
+
+const path = require('path');
 const webpackMerge = require('webpack-merge');
 const webpackLoader = require('./webpack-loader');
 const webpackPlugin = require('./webpack-plugin');
@@ -10,6 +13,7 @@ const target = isElectron == 'true' ? 'electron-renderer' : 'web';
 const mode = (isDev ? 'development' : 'production');
 const devtool = (isDev ? 'eval' : false);
 const entry = ['@babel/polyfill', 'react-hot-loader/patch', webpackPath.src];
+const devServer = `${process.env.DEV_HOST}:${process.env.DEV_PORT}/`;
 
 const performance = {
   hints: isDev ? false : 'warning',
@@ -58,10 +62,9 @@ const resolve = {
 
 
 const output = {
-  path: webpackPath.out,
-  filename: 'scripts/[name].bundle.js',
-  // publicPath: '/',
-  publicPath: isElectron == 'true' && isDev ? 'http://localhost:11211/' : '/'
+  path: isElectron == 'true' ? path.resolve(__dirname, webpackPath.out, 'electron') : path.resolve(__dirname, webpackPath.out, 'web'),
+  filename: '[name].bundle.js',
+  publicPath: ''
 };
 
 const plugins = webpackPlugin;

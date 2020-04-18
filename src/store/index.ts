@@ -1,10 +1,10 @@
-import { createHashHistory } from 'history';
+import { createHashHistory, createBrowserHistory } from 'history';
 import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import { routerMiddleware } from 'connected-react-router';
 import createRootReducer from './reducers';
 
-export const history = createHashHistory();
+export const history = ELECTRON ? createHashHistory() : createBrowserHistory();
 
 export default function configureStore(preloadedState?: any) {
   const composeEnhancer: typeof compose = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

@@ -6,9 +6,10 @@
   "scripts": {
     "test": "jest",
     "build": "cross-env NODE_ENV=production webpack --config ./webpack/webpack.config.js",
-    "start:dev": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/webpack.config.js",
-    "watch:electron": "rm -rf ./dist && mkdir ./dist && cp ./public/electron.html ./dist/index.html && cross-env NODE_ENV=development webpack-dev-server --config ./webpack/webpack.config.js",
-    "start:electron": "electron main.js"
+    "watch": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/webpack.config.js",
+    "start:web:prod": "serve dist/web/",
+    "start:elc:dev": "cross-env NODE_ENV=development electron ./electron/main.development.js",
+    "start:elc:prod": "cross-env NODE_ENV=production electron ./dist/electron/main.js"
   },
   "keywords": [
     "React",
@@ -86,10 +87,11 @@
     "react-hot-loader": "^4.12.18",
     "react-test-renderer": "^16.12.0",
     "sass-loader": "^8.0.0",
+    "serve": "^11.3.0",
     "style-loader": "^1.1.2",
     "ts-jest": "^24.2.0",
     "ts-loader": "^6.2.1",
-    "typescript": "^3.7.4",
+    "typescript": "^3.8.3",
     "url-loader": "^3.0.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",

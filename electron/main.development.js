@@ -1,7 +1,13 @@
+require('dotenv').config();
+
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
+const devServer = `${process.env.DEV_HOST}:${process.env.DEV_PORT}/`;
+const isDev = process.env.NODE_ENV === 'development';
 
 let mainWindow;
+
+app.allowRendererProcessReuse = false;
 
 const createWindow = () => {
   mainWindow = new BrowserWindow({
@@ -12,7 +18,7 @@ const createWindow = () => {
     },
   });
 
-  mainWindow.loadFile(path.join(__dirname, 'dist/index.html'));
+  mainWindow.loadURL(devServer);
 
   mainWindow.on('closed', () => {
     mainWindow = null;

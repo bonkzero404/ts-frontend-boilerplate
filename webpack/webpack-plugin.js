@@ -13,12 +13,11 @@ const isDev = process.env.NODE_ENV === 'development';
 const plugin = [
   new webpack.HotModuleReplacementPlugin(),
   new HtmlWebpackPlugin({
-    template: `${process.env.PUBLIC_DEV}/index.html`
+    title: process.env.TITLE,
+    template: `${process.env.PUBLIC_DEV}/index.html`,
   }),
   new webpack.DefinePlugin({
-    API_SERVER: JSON.stringify(process.env.API_SERVER),
-    POUCHDB_ENDPOINT: JSON.stringify(process.env.POUCHDB_ENDPOINT),
-    POUCHDB_DB: JSON.stringify(process.env.POUCHDB_DB),
+    ELECTRON: process.env.ELECTRON
   }),
   new CompressionPlugin({
     filename: '[path].gz[query]',
@@ -38,9 +37,16 @@ const copyPlugin = new CopyPlugin([
   },
 ]);
 
+const copyElectron = new CopyPlugin([
+  {
+    from: 'electron/main.production.js',
+    to: 'main.js' ,
+  },
+]);
+
 const cssExtract = new MiniCssExtractPlugin({
-  filename: 'css/[name]-[hash:8].css',
-  chunkFilename: 'css/[id]-[hash:8].css',
+  filename: '[name]-[hash:8].css',
+  chunkFilename: '[id]-[hash:8].css',
   ignoreOrder: false, // Enable to remove warnings about conflicting order
 });
 
@@ -58,6 +64,10 @@ if (!isDev) {
   plugin.push(new webpack.ProgressPlugin());
   // plugin.push(new PreloadWebpackPlugin());
   plugin.push(copyPlugin);
+
+  if (process.env.ELECTRON == 'true') {
+    plugin.push(copyElectron);
+  }
   plugin.push(cssExtract);
 } else {
   plugin.push(new webpack.SourceMapDevToolPlugin());
