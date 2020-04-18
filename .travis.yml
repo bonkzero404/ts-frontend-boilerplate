@@ -11,14 +11,4 @@ script:
   - npm run build
 after_script: # Upload coverage reports
   - COVERALLS_REPO_TOKEN=$coveralls_repo_token npm run coveralls
-before_deploy:
-  # Set up git user name and tag this commits
-  - git config --local user.name "bonkzero404"
-  - git config --local user.email "bonkzero404@gmail.com"
-  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
-  - git tag $TRAVIS_TAG
-deploy:
-  provider: releases
-  cleanup: true
-  github_token: $github_token
-  file: *
+
