@@ -1,5 +1,16 @@
 # ts-frontend-boilerplate
 
+<div align="left">
+  <!-- Dependency Status -->
+  <a href="https://david-dm.org/bonkzero404/ts-frontend-boilerplate">
+    <img src="https://david-dm.org/bonkzero404/ts-frontend-boilerplate.svg" alt="Dependency Status" />
+  </a>
+  <!-- devDependency Status -->
+  <a href="https://david-dm.org/bonkzero404/ts-frontend-boilerplate#info=devDependencies">
+    <img src="https://david-dm.org/bonkzero404/ts-frontend-boilerplate/dev-status.svg" alt="devDependency Status" />
+  </a>
+</a>
+
 <p>This framework has support for building applications with electron, it's very simple and powerful for building modern web app or desktop app</p>
 
 <p>
