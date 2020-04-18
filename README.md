@@ -9,6 +9,10 @@
   <a href="https://david-dm.org/bonkzero404/ts-frontend-boilerplate#info=devDependencies">
     <img src="https://david-dm.org/bonkzero404/ts-frontend-boilerplate/dev-status.svg" alt="devDependency Status" />
   </a>
+  <!-- Build Status -->
+  <a href="https://travis-ci.org/bonkzero404/ts-frontend-boilerplate">
+    <img src="https://travis-ci.org/bonkzero404/ts-frontend-boilerplate.svg?branch=master" alt="Build Status" />
+  </a>
 </a>
 
 <p>This framework has support for building applications with electron, it's very simple and powerful for building modern web app or desktop app</p>
