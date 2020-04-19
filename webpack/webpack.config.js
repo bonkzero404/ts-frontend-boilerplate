@@ -64,7 +64,7 @@ const resolve = {
 const output = {
   path: isElectron == 'true' ? path.resolve(__dirname, webpackPath.out, 'electron') : path.resolve(__dirname, webpackPath.out, 'web'),
   filename: '[name].bundle.js',
-  publicPath: ''
+  publicPath: './'
 };
 
 const plugins = webpackPlugin;
