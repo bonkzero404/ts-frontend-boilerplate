@@ -30,6 +30,7 @@
 
 <br/>
 
+<h1>Technology Stack</h1>
 <div align="center" style="margin-bottom: 20px">
   <a href="https://facebook.github.io/react/"><img src="./internals/img/react.png" /></a>
   <a href="https://webpack.github.io/"><img src="./internals/img/webpack.png" /></a>
