@@ -26,7 +26,9 @@
   React Boilerplate uses <a href="https://www.typescriptlang.org/">Typescript</a>, <a href="https://facebook.github.io/react/">React</a>, <a href="https://github.com/reactjs/redux">Redux</a>, <a href="https://github.com/reactjs/react-router">React Router</a>, <a href="https://eslint.org/">Eslint</a>, <a href="https://developers.google.com/web/progressive-web-apps">PWAs</a>, <a href="http://webpack.github.io/docs/">Webpack</a> and <a href="https://github.com/gaearon/react-hot-loader">React Hot Loader</a> for rapid application development (HMR).
 </p>
 
-<br>
+<p>Demo Page : <a href="https://bonkzero404.github.io/ts-frontend-boilerplate/">https://bonkzero404.github.io/ts-frontend-boilerplate/</a></p>
+
+<br/>
 
 <div align="center" style="margin-bottom: 20px">
   <a href="https://facebook.github.io/react/"><img src="./internals/img/react.png" /></a>
@@ -39,6 +41,8 @@
   <a href="https://jestjs.io"><img src="./internals/img/jest.png" width="90" /></a>
   <a href="https://www.docker.com"><img src="./internals/img/docker.png" width="90" /></a>
 </div>
+
+<br />
 
 <h1>Installation</h1>
 <h2>Clone the repository</h2>
