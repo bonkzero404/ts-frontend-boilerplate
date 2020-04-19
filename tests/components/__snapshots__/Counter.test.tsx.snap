@@ -8,11 +8,13 @@ exports[`<Counter /> defines the snapshoot component 1`] = `
     </h1>
     <button
       onClick={[Function]}
+      type="button"
     >
       +
     </button>
     <button
       onClick={[Function]}
+      type="button"
     >
       -
     </button>
