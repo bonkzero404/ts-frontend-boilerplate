@@ -10,8 +10,6 @@ const CompressionPlugin = require('compression-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 
-console.log('WEB_BASE_PATH', process.env.WEB_BASE_PATH);
-
 const plugin = [
   new webpack.HotModuleReplacementPlugin(),
   new HtmlWebpackPlugin({
@@ -19,7 +17,8 @@ const plugin = [
     template: `${process.env.PUBLIC_DEV}/index.html`,
   }),
   new webpack.DefinePlugin({
-    ELECTRON: process.env.ELECTRON,
+    NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+    ELECTRON: (process.env.ELECTRON === 'true'),
     WEB_BASE_PATH: JSON.stringify(process.env.WEB_BASE_PATH)
   }),
   new CompressionPlugin({

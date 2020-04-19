@@ -19,5 +19,6 @@ declare module '*.svg';
 /**
  * Declare environment
  */
-declare let ELECTRON: string;
+declare let ELECTRON: boolean;
 declare let WEB_BASE_PATH: string;
+declare let NODE_ENV: string;
