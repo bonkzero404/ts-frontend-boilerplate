@@ -1,4 +1,9 @@
-import { COUNTER_INCREMENT, COUNTER_DECREMENT, IActionAdd, IActionMin } from './types';
+import {
+  COUNTER_INCREMENT,
+  COUNTER_DECREMENT,
+  IActionAdd,
+  IActionMin,
+} from './types';
 
 export function counterIncrement(): IActionAdd {
   return { type: COUNTER_INCREMENT };

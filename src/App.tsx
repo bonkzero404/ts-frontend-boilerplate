@@ -20,4 +20,3 @@ const App = ({ history }: AppProps) => (
 );
 
 export default App;
-

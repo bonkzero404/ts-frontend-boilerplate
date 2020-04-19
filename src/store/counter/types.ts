@@ -1,7 +1,7 @@
 import { Action } from 'redux';
 
-export const COUNTER_INCREMENT: string = '@@COUNTER/INCREMENT';
-export const COUNTER_DECREMENT: string = '@@COUNTER/DECREMENT';
+export const COUNTER_INCREMENT = '@@COUNTER/INCREMENT';
+export const COUNTER_DECREMENT = '@@COUNTER/DECREMENT';
 
 /**
  * State
@@ -21,9 +21,4 @@ export interface IActionMin extends Action {
   type: typeof COUNTER_DECREMENT;
 }
 
-
 export type CounterActions = IActionAdd | IActionMin;
-
-
-
-

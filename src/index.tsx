@@ -10,6 +10,7 @@ OfflinePluginRuntime.install();
 
 const store = configureStore();
 
+// eslint-disable-next-line import/prefer-default-export
 export const MainApp = () => {
   return (
     <AppContainer>
@@ -22,7 +23,7 @@ export const MainApp = () => {
 
 const render = () => {
   ReactDOM.render(<MainApp />, document.getElementById('app'));
-}
+};
 
 if (module.hot) {
   module.hot.accept('./App', () => {
