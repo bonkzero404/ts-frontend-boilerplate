@@ -28,8 +28,6 @@
 
 <p>Demo Page : <a href="https://bonkzero404.github.io/ts-frontend-boilerplate/">https://bonkzero404.github.io/ts-frontend-boilerplate/</a></p>
 
-<br/>
-
 <h1>Technology Stack</h1>
 <div align="center" style="margin-bottom: 20px">
   <a href="https://facebook.github.io/react/"><img src="./internals/img/react.png" /></a>
