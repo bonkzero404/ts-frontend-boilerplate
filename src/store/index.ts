@@ -7,7 +7,7 @@ import createRootReducer from './reducers';
 let hst: any;
 
 try {
-  hst = ELECTRON ? createHashHistory() : createBrowserHistory();
+  hst = ELECTRON ? createHashHistory() : createBrowserHistory({ basename: '/' + WEB_BASE_PATH });
 } catch(err) {
   hst = createBrowserHistory();
 }
