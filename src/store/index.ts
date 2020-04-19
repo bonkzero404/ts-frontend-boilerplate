@@ -14,7 +14,7 @@ try {
   nodeEnv = NODE_ENV;
   hst = ELECTRON
     ? createHashHistory()
-    : createBrowserHistory({ basename: `/${WEB_BASE_PATH}` });
+    : createBrowserHistory({ basename: WEB_BASE_PATH });
 } catch (err) {
   hst = createBrowserHistory();
   nodeEnv = 'production';

@@ -9,7 +9,7 @@
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "build": "cross-env NODE_ENV=production webpack --config ./webpack/webpack.config.js",
     "watch": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/webpack.config.js",
-    "start:web:prod": "serve dist/web/",
+    "start:web:prod": "serve dist/",
     "start:elc:dev": "cross-env NODE_ENV=development electron ./electron/main.development.js",
     "start:elc:prod": "cross-env NODE_ENV=production electron ./dist/electron/main.js"
   },
