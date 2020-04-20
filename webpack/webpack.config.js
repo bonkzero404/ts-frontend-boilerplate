@@ -4,22 +4,42 @@ const path = require('path');
 const webpackMerge = require('webpack-merge');
 const webpackLoader = require('./webpack-loader');
 const webpackPlugin = require('./webpack-plugin');
-const webpackPath = require('./webpack-path');
 const webpackServer = require('./webpack-server');
 
-const isDev = process.env.NODE_ENV === 'development';
-const isElectron = process.env.ELECTRON;
-const target = isElectron == 'true' ? 'electron-renderer' : 'web';
+/**
+ * Path source and out for build
+ */
+const root = path.resolve(__dirname, '..');
+const src = path.join(root, process.env.SOURCE_DEV);
+const out = path.join(root, process.env.BUILD_DEST);
+
+/**
+ * Environment variable
+ */
+const isDev = process.env.NODE_ENV === 'development'; // Node Environment
+const isElectron = (process.env.ELECTRON === 'true'); // Convert to boolean
+const devServer = `${process.env.DEV_HOST}:${process.env.DEV_PORT}/`; // Set base url
+
+/**
+ * Config set
+ */
+const target = isElectron ? 'electron-renderer' : 'web';
 const mode = (isDev ? 'development' : 'production');
 const devtool = (isDev ? 'eval' : false);
-const entry = ['@babel/polyfill', 'react-hot-loader/patch', webpackPath.src];
-const devServer = `${process.env.DEV_HOST}:${process.env.DEV_PORT}/`;
+const entry = ['@babel/polyfill', 'react-hot-loader/patch', src];
 
+/**
+ * Performance build
+ * remove warning
+ */
 const performance = {
-  hints: isDev ? false : 'warning',
-  maxAssetSize: 102400,
+  hints: false,
+  maxAssetSize: parseInt(process.env.MAX_FILE_ASSET_SIZE),
 };
 
+/**
+ * Optimization for code split
+ */
 const optimization = {
   splitChunks: {
     cacheGroups: {
@@ -42,6 +62,9 @@ const optimization = {
   },
 };
 
+/**
+ * odule rules
+ */
 const moduleRule = {
   rules: [
     webpackLoader.babelTs,
@@ -52,6 +75,9 @@ const moduleRule = {
   ],
 };
 
+/**
+ * Resolve filename
+ */
 const resolve = {
   modules: ['node_modules'],
   extensions: ['.ts', '.tsx', '.js', '.json'],
@@ -60,15 +86,20 @@ const resolve = {
   },
 };
 
-
+/**
+ * Output build
+ */
 const output = {
-  path: isElectron == 'true' ? path.resolve(__dirname, webpackPath.out, 'electron') : path.resolve(__dirname, webpackPath.out, 'web'),
+  path: isElectron ?
+    path.resolve(__dirname, out, process.env.BUILD_DIR_ELECTRON) :
+    path.resolve(__dirname, out, process.env.BUILD_DIR_WEB),
   filename: '[name].bundle.js',
   publicPath: './'
 };
 
-const plugins = webpackPlugin;
-
+/**
+ * Main webpack config
+ */
 const common = {
   mode,
   target,
@@ -79,7 +110,7 @@ const common = {
   module: moduleRule,
   resolve,
   output,
-  plugins,
+  plugins: webpackPlugin,
 };
 
 module.exports = () => {
