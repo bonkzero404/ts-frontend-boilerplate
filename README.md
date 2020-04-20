@@ -83,24 +83,37 @@ $ yarn test
 <p>open the .env file and change the <strong>ELECTRON</strong> variable to true</p>
 
 ```bash
+## Setting base path url
+## this var only for web app
+WEB_BASE_PATH = /
+
 ## Require for configure build webpack
 SOURCE_DEV = src
 PUBLIC_DEV = public
 BUILD_DEST = dist
 
+## Build Dir
+## For web
+BUILD_DIR_WEB = web
+
+## For Electron
+BUILD_DIR_ELECTRON = electron
+
 ## Require for configure webpack copy ignore in assets
-ASSETS_COPY_IGNORE = ""
+ASSETS_COPY_IGNORE =
+
+## Max asset size for transpile
+MAX_FILE_ASSET_SIZE = 102400
 
 ## Dev server configure
 DEV_HOST = http://localhost
 DEV_PORT = 11211
 
 ## Sites configure
-TITLE = "Typescript React Framework"
+TITLE = Typescript React Framework
 
-## Add exposed global var in here
-ELECTRON = true ## <-- Change this if you want to use electron
-
+## Add & exposed global var in here
+ELECTRON = false  ## <-- Change this if you want to use electron
 ```
 
 <h2>Running Example Electron App</h2>
