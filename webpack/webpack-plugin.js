@@ -10,6 +10,11 @@ const CompressionPlugin = require('compression-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 
+/**
+ * ---------------------------------------------------
+ * Default plugin var for development and production
+ * --------------------------------------------------
+ */
 const plugin = [
   new webpack.HotModuleReplacementPlugin(),
   new HtmlWebpackPlugin({
@@ -29,16 +34,29 @@ const plugin = [
     minRatio: 0.8,
     compressionOptions: { level: 9 },
   }),
-]
+];
 
+
+/**
+ * ---------------------------------------------
+ * Plugins for production mode
+ * ---------------------------------------------
+ */
+
+/**
+ * Copy files from public directory
+ */
 const copyPlugin = new CopyPlugin([
   {
-    from: 'public',
+    from: process.env.PUBLIC_DEV,
     to: '' ,
     ignore: (process.env.ASSETS_COPY_IGNORE.trim() === '' ? [] : process.env.ASSETS_COPY_IGNORE.split(',')),
   },
 ]);
 
+/**
+ * Copy electron main for production
+ */
 const copyElectron = new CopyPlugin([
   {
     from: 'electron/main.production.js',
@@ -46,12 +64,18 @@ const copyElectron = new CopyPlugin([
   },
 ]);
 
+/**
+ * Generate to css
+ */
 const cssExtract = new MiniCssExtractPlugin({
   filename: '[name]-[hash:8].css',
   chunkFilename: '[id]-[hash:8].css',
   ignoreOrder: false, // Enable to remove warnings about conflicting order
 });
 
+/**
+ * Service worker plugin for production
+ */
 const sw = new OfflinePlugin({
   externals: [
     './favicon.ico',
@@ -61,6 +85,9 @@ const sw = new OfflinePlugin({
   publicPath: './'
 });
 
+/**
+ * Split plugin for development and production
+ */
 if (!isDev) {
   plugin.push(sw);
   plugin.push(new webpack.ProgressPlugin());
