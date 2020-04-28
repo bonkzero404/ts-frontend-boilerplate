@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
+
 const devServer = `${process.env.DEV_HOST}:${process.env.DEV_PORT}/`;
 const isDev = process.env.NODE_ENV === 'development';
 
