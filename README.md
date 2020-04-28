@@ -17,8 +17,11 @@
   <a href='https://coveralls.io/github/bonkzero404/ts-frontend-boilerplate?branch=master'>
     <img src='https://coveralls.io/repos/github/bonkzero404/ts-frontend-boilerplate/badge.svg?branch=master' alt='Coverage Status' />
   </a>
-
-</a>
+  
+  <a href="https://www.codefactor.io/repository/github/bonkzero404/ts-frontend-boilerplate">
+    <img src="https://www.codefactor.io/repository/github/bonkzero404/ts-frontend-boilerplate/badge" alt="CodeFactor" />
+  </a>
+</div>
 
 <p>This framework has support for building applications with electron, it's very simple and powerful for building modern web app or desktop app</p>
 
