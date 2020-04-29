@@ -18,7 +18,6 @@ const out = path.join(root, process.env.BUILD_DEST);
  */
 const isDev = process.env.NODE_ENV === 'development'; // Node Environment
 const isElectron = (process.env.ELECTRON === 'true'); // Convert to boolean
-const devServer = `${process.env.DEV_HOST}:${process.env.DEV_PORT}/`; // Set base url
 
 /**
  * Config set
