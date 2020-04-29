@@ -21,6 +21,10 @@
   <a href="https://www.codefactor.io/repository/github/bonkzero404/ts-frontend-boilerplate">
     <img src="https://www.codefactor.io/repository/github/bonkzero404/ts-frontend-boilerplate/badge" alt="CodeFactor" />
   </a>
+  
+  <a href="https://deepscan.io/dashboard#view=project&tid=8948&pid=11184&bid=163358">
+    <img src="https://deepscan.io/api/teams/8948/projects/11184/branches/163358/badge/grade.svg" alt="DeepScan grade">
+  </a>
 </div>
 
 <p>This framework has support for building applications with electron, it's very simple and powerful for building modern web app or desktop app</p>
