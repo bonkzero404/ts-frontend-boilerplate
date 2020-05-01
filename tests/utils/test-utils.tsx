@@ -15,7 +15,6 @@ const Comps = (Child: any, props: any) => (
   <Provider store={mockStore}>
     <ConnectedRouter history={history}>
       <Switch>
-        // eslint-disable-next-line react/jsx-props-no-spreading
         <Child {...props} dispatch={mockDispatchfn} />
       </Switch>
     </ConnectedRouter>
