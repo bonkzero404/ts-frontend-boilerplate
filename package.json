@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "lint": "eslint --fix src/**/*.{ts,tsx}",
     "coverage": "jest --coverage",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "build": "cross-env NODE_ENV=production webpack --config ./webpack/webpack.config.js",

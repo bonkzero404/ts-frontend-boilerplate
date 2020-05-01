@@ -3,4 +3,3 @@ webpack/**/*
 public/**/*
 internals/**/*
 babel.config.js
-tests/**/*

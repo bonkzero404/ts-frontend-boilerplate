@@ -16,4 +16,3 @@ describe('<Counter />', () => {
     expect(tree).toMatchSnapshot();
   });
 });
-

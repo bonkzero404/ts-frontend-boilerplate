@@ -34,6 +34,7 @@
       }
     ],
     "import/extensions": [
+      1,
       "ignorePackages",
       {
         "js": "never",
