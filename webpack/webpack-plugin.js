@@ -78,11 +78,11 @@ const cssExtract = new MiniCssExtractPlugin({
  */
 const sw = new OfflinePlugin({
   externals: [
-    './favicon.ico',
-    './manifest.json',
+    '/favicon.ico',
+    '/manifest.json',
   ],
-  appShell: './',
-  publicPath: './'
+  appShell: '/',
+  publicPath: '/'
 });
 
 /**

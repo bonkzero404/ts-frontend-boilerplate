@@ -93,7 +93,7 @@ const output = {
     path.resolve(__dirname, out, process.env.BUILD_DIR_ELECTRON) :
     path.resolve(__dirname, out, process.env.BUILD_DIR_WEB),
   filename: '[name].bundle.js',
-  publicPath: './'
+  publicPath: '/'
 };
 
 /**
