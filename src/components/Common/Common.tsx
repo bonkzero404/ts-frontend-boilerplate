@@ -20,9 +20,7 @@ const Common: React.FunctionComponent<TProps> = (props: TProps) => {
         <LazyLoadImage className={Style.logo} src={ImageLogo} alt="Logo" />
         <h1 className={Style.headText}>React JS</h1>
         <p>
-          Horay
-          <Link to="/counter">Click Me</Link>
-          to play counter
+          Horay <Link to="/counter">Click Me</Link> to play counter
         </p>
         <p>You are here :{props.pathname}</p>
       </div>
