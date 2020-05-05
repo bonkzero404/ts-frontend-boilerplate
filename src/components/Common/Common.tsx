@@ -2,6 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { State } from '../../store/reducers';
 import * as Style from './Style.scss';
 import ImageLogo from '../../assets/images/logo.png';
@@ -16,7 +17,7 @@ const Common: React.FunctionComponent<TProps> = (props: TProps) => {
   return (
     <div className={Style.container}>
       <div className={Style.box}>
-        <img className={Style.logo} src={ImageLogo} alt="Logo" />
+        <LazyLoadImage className={Style.logo} src={ImageLogo} alt="Logo" />
         <h1 className={Style.headText}>React JS</h1>
         <p>
           Horay
