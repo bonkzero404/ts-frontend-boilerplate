@@ -1,4 +1,4 @@
-FROM node:12.10.0
+FROM node:12.16.3
 
 # Install yarn package
 RUN npm install -g yarn
