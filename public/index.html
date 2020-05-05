@@ -2,15 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="<%= htmlWebpackPlugin.options.icon_favicon %>" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Just a simple web app boilerplate"
+      content="<%= htmlWebpackPlugin.options.description %>"
     />
-    <link rel="apple-touch-icon" href="/logo192.png" />
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="<%= htmlWebpackPlugin.options.icon_apple_touch %>" />
+    <link rel="manifest" href="<%= htmlWebpackPlugin.options.manifest_app %>" />
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
