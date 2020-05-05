@@ -20,7 +20,7 @@ const plugin = [
   new HtmlWebpackPlugin({
     title: process.env.TITLE,
     description: process.env.DESCRIPTION,
-    icon_appple_touch: `${process.env.WEB_BASE_PATH}${process.env.ICON_APPLE_TOUCH}`,
+    icon_apple_touch: `${process.env.WEB_BASE_PATH}${process.env.ICON_APPLE_TOUCH}`,
     icon_favicon: `${process.env.WEB_BASE_PATH}${process.env.ICON_FAVICON}`,
     manifest_app: `${process.env.WEB_BASE_PATH}${process.env.MANIFEST_APP}`,
     template: `${process.env.PUBLIC_DEV}/index.html`,
