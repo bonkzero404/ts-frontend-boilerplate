@@ -3,22 +3,26 @@
 exports[`<Common /> defines the snapshoot component 1`] = `
 <div>
   <div>
-    <img
-      alt="Logo"
-      src="test-file-stub"
+    <span
+      className=""
+      style={
+        Object {
+          "display": "inline-block",
+        }
+      }
     />
     <h1>
       React JS
     </h1>
     <p>
-      Horay
+      Horay 
       <a
         href="/counter"
         onClick={[Function]}
       >
         Click Me
       </a>
-      to play counter
+       to play counter
     </p>
     <p>
       You are here :
