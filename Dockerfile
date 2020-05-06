@@ -1,14 +1,14 @@
 FROM node:12.16.3
 
-# Install yarn package
-RUN npm install -g yarn
+# Install pm2 package
+RUN npm i -g pm2
 
 COPY . .
 
 # Install NodeJS dependencies
-RUN yarn
+RUN npm i
 
 # build package
-RUN yarn build
+RUN npm run build
 
-CMD ["yarn", "start:web:prod"]
+CMD [ "pm2-runtime", "start", "app.json" ]
