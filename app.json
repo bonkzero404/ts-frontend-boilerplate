@@ -1,0 +1,14 @@
+{
+  "name": "ts-frontend-boilerplate",
+  "script": "serve",
+  "instances": "2",
+  "env": {
+    "NODE_ENV": "development",
+    "PM2_SERVE_PATH": "dist/web/",
+    "PM2_SERVE_SPA": true,
+    "PM2_SERVE_PORT": 5000
+  },
+  "env_production" : {
+    "NODE_ENV": "production"
+  }
+}
