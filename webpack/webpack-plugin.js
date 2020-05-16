@@ -50,23 +50,29 @@ const plugin = [
 /**
  * Copy files from public directory
  */
-const copyPlugin = new CopyPlugin([
-  {
-    from: process.env.PUBLIC_DEV,
-    to: '' ,
-    ignore: (process.env.ASSETS_COPY_IGNORE.trim() === '' ? [] : process.env.ASSETS_COPY_IGNORE.split(',')),
-  },
-]);
+const copyPlugin = new CopyPlugin({
+  patterns: [
+    {
+      from: process.env.PUBLIC_DEV,
+      to: '' ,
+      globOptions: {
+        ignore: (process.env.ASSETS_COPY_IGNORE.trim() === '' ? [] : process.env.ASSETS_COPY_IGNORE.split(',')),
+      },
+    }
+  ]
+});
 
 /**
  * Copy electron main for production
  */
-const copyElectron = new CopyPlugin([
-  {
-    from: 'electron/main.production.js',
-    to: 'main.js' ,
-  },
-]);
+const copyElectron = new CopyPlugin({
+  patterns: [
+    {
+      from: 'electron/main.production.js',
+      to: 'main.js' ,
+    }
+  ]
+});
 
 /**
  * Generate to css
