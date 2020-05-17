@@ -1,30 +1,43 @@
 import { createHashHistory, createBrowserHistory, History } from 'history';
-import { applyMiddleware, compose, createStore } from 'redux';
+import { applyMiddleware, compose, createStore, Store } from 'redux';
 import thunk from 'redux-thunk';
 import { routerMiddleware } from 'connected-react-router';
 import createRootReducer from './reducers';
 
-let hst: History;
-let nodeEnv: string;
+export const envHistory = () => {
+  let tmpHistory: History;
+  let nodeEnv: string;
 
-/**
- * Error handling env for unit test
- */
-try {
-  nodeEnv = NODE_ENV;
-  hst = ELECTRON
-    ? createHashHistory()
-    : createBrowserHistory({ basename: WEB_BASE_PATH });
-} catch (err) {
-  hst = createBrowserHistory();
-  nodeEnv = 'production';
-}
+  /**
+   * Error handling env for unit test
+   */
+  try {
+    nodeEnv = NODE_ENV;
+    tmpHistory = ELECTRON
+      ? createHashHistory()
+      : createBrowserHistory({ basename: WEB_BASE_PATH });
+  } catch (err) {
+    tmpHistory = createBrowserHistory();
+    nodeEnv = 'production';
+  }
 
-export const history = hst;
+  return { tmpHistory, nodeEnv };
+};
+
+export const history = envHistory().tmpHistory;
+
+export const moduleHotAccept = (mod: any, store: Store) => {
+  if (mod.hot) {
+    // Enable Webpack hot module replacement for reducers
+    mod.hot.accept('./reducers', () => {
+      store.replaceReducer(createRootReducer(history));
+    });
+  }
+};
 
 export default function configureStore(preloadedState?: any) {
   const composeEnhancer: typeof compose =
-    nodeEnv === 'development'
+    envHistory().nodeEnv === 'development'
       ? (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
       : compose;
 
@@ -34,12 +47,7 @@ export default function configureStore(preloadedState?: any) {
     composeEnhancer(applyMiddleware(thunk, routerMiddleware(history)))
   );
 
-  if (module.hot) {
-    // Enable Webpack hot module replacement for reducers
-    module.hot.accept('./reducers', () => {
-      store.replaceReducer(createRootReducer(history));
-    });
-  }
+  moduleHotAccept(module, store);
 
   return store;
 }
