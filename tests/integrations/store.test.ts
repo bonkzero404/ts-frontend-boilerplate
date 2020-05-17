@@ -1,9 +1,4 @@
-import { createHashHistory, createBrowserHistory } from 'history';
-import dotenv from 'dotenv';
-import configureStore, { moduleHotAccept, envHistory } from '../../src/store';
-import createRootReducer from '../../src/store/reducers';
-
-dotenv.config();
+import configureStore, { moduleHotAccept } from '../../src/store';
 
 describe('store', () => {
   it('hot module reducer', () => {
