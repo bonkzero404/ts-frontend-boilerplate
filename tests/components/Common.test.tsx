@@ -6,12 +6,12 @@ describe('<Common />', () => {
 
   const props: any = {};
 
-  it('defines the component', () => {
+  it('defines the component Common', () => {
     wrapper = mountComponent(Common, props);
     expect(wrapper).toBeDefined();
   });
 
-  it('defines the snapshoot component', () => {
+  it('defines the snapshoot component common', () => {
     const tree = rendererComponent(Common, props).toJSON();
     expect(tree).toMatchSnapshot();
   });
