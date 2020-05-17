@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Counter /> defines the snapshoot component 1`] = `
+exports[`<Counter /> defines the snapshoot component Counter 1`] = `
 <div>
   <div>
     <h1>

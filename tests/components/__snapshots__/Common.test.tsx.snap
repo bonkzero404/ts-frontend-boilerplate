@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Common /> defines the snapshoot component 1`] = `
+exports[`<Common /> defines the snapshoot component common 1`] = `
 <div>
   <div>
     <span
