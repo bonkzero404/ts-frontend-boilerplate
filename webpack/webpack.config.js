@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const path = require('path');
-const webpackMerge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const webpackLoader = require('./webpack-loader');
 const webpackPlugin = require('./webpack-plugin');
 const webpackServer = require('./webpack-server');
@@ -113,6 +113,6 @@ const common = {
 };
 
 module.exports = () => {
-  if (isDev) return webpackMerge(common, webpackServer.configDevServer);
+  if (isDev) return merge(common, webpackServer.configDevServer);
   return common;
 }
